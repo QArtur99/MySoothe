@@ -32,6 +32,7 @@ import com.example.androiddevchallenge.ui.screen.Home
 import com.example.androiddevchallenge.ui.screen.Login
 import com.example.androiddevchallenge.ui.screen.Welcome
 import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.google.accompanist.insets.ProvideWindowInsets
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +40,9 @@ class MainActivity : AppCompatActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             MyTheme {
-                MyApp(isSystemInDarkTheme())
+                ProvideWindowInsets {
+                    MyApp(isSystemInDarkTheme())
+                }
             }
         }
     }
@@ -60,7 +63,9 @@ fun MyApp(isDarkTheme: Boolean) {
 @Composable
 fun LightPreview() {
     MyTheme {
-        MyApp(isSystemInDarkTheme())
+        ProvideWindowInsets {
+            MyApp(isSystemInDarkTheme())
+        }
     }
 }
 
@@ -68,6 +73,8 @@ fun LightPreview() {
 @Composable
 fun DarkPreview() {
     MyTheme(darkTheme = true) {
-        MyApp(isSystemInDarkTheme())
+        ProvideWindowInsets {
+            MyApp(isSystemInDarkTheme())
+        }
     }
 }
