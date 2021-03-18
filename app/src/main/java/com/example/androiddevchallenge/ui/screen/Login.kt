@@ -101,7 +101,7 @@ fun Login(isDarkTheme: Boolean, navController: NavController) {
             Spacer(modifier = Modifier.height(8.dp))
             Button(
                 onClick = {
-                    navController.navigate(route = ScreenState.Login)
+                    navController.navigate(route = ScreenState.Home)
                 },
                 shape = shapes.medium,
                 colors = ButtonDefaults.buttonColors(
