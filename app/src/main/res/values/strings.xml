@@ -10,4 +10,7 @@
       the License.
       -->
     <string name="app_name">MySmoothe</string>
+    <string name="cd_action_play">play</string>
+    <string name="cd_nav_home">home</string>
+    <string name="cd_nav_profile">profil</string>
 </resources>
