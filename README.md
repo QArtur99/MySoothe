@@ -3,6 +3,7 @@
 
 ## :scroll: Description
 Android Dev Challenge: Week 3 - Speed round
+
 EMEA-friendly: 9AM UTC
 
 ## :bulb: Motivation and Context
