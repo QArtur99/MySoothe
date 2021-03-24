@@ -1,24 +1,23 @@
 # MySoothe
-![Workflow result](https://github.com/QArtur99/WeTrade/workflows/Check/badge.svg)
+![Workflow result](https://github.com/QArtur99/MySoothe/workflows/Check/badge.svg)
 
 ## :scroll: Description
 Android Dev Challenge: Week 3 - Speed round
+EMEA-friendly: 9AM UTC
 
 ## :bulb: Motivation and Context
 -
 
 ## :camera_flash: Screenshots
 <p float="left">
-<img src="/results/screenshot_1.png" width="200">
-<img src="/results/screenshot_2.png" width="200">
-<img src="/results/screenshot_3.png" width="200">
-<img src="/results/screenshot_4.png" width="200">|
+<img src="/results/screenshot_1.png" width="260">
+<img src="/results/screenshot_2.png" width="260">
+<img src="/results/screenshot_3.png" width="260">
 </p>
 <p float="left">
-<img src="/results/screenshot_5.png" width="200">
-<img src="/results/screenshot_6.png" width="200">
-<img src="/results/screenshot_7.png" width="200">
-<img src="/results/screenshot_8.png" width="200">
+<img src="/results/screenshot_4.png" width="260">|
+<img src="/results/screenshot_5.png" width="260">
+<img src="/results/screenshot_6.png" width="260">
 </p>
 
 ## License

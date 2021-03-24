@@ -113,20 +113,7 @@ private fun Content(searchState: MutableState<String>) {
             )
         )
         Title("favorite collections")
-        Row(
-            modifier = Modifier
-                .horizontalScroll(rememberScrollState())
-                .padding(start = 16.dp, end = 16.dp, top = 0.dp, bottom = 8.dp)
-        ) {
-            for (i in favoriteList.indices step 2) {
-                Column {
-                    ItemFavorite(item = favoriteList[i])
-                    Spacer(Modifier.height(8.dp))
-                    ItemFavorite(item = favoriteList[i + 1])
-                }
-                Spacer(Modifier.width(8.dp))
-            }
-        }
+        RowFavorite()
         Title("align your body")
         RowBody()
         Title("align your mind")
@@ -150,6 +137,24 @@ private fun Title(title: String) {
             .padding(horizontal = 16.dp)
             .padding(bottom = 8.dp)
     )
+}
+
+@Composable
+private fun RowFavorite() {
+    Row(
+        modifier = Modifier
+            .horizontalScroll(rememberScrollState())
+            .padding(start = 16.dp, end = 16.dp, top = 0.dp, bottom = 8.dp)
+    ) {
+        for (i in favoriteList.indices step 2) {
+            Column {
+                ItemFavorite(item = favoriteList[i])
+                Spacer(Modifier.height(8.dp))
+                ItemFavorite(item = favoriteList[i + 1])
+            }
+            Spacer(Modifier.width(8.dp))
+        }
+    }
 }
 
 @Composable
@@ -259,10 +264,12 @@ private fun BottomActionBar() {
 
 @Composable
 fun ItemFavorite(item: Favorite) {
-    Card(shape = shapes.small) {
+    Card(
+        backgroundColor = MaterialTheme.colors.surface,
+        shape = shapes.small
+    ) {
         Row(
             modifier = Modifier
-                .background(color = MaterialTheme.colors.surface)
                 .height(56.dp)
                 .width(192.dp)
         ) {
