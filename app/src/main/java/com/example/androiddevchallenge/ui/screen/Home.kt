@@ -22,7 +22,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -95,50 +95,50 @@ private fun Content(searchState: MutableState<String>) {
     Column(
         modifier = Modifier
             .verticalScroll(rememberScrollState())
-            .fillMaxWidth()
-            .fillMaxHeight()
+            .fillMaxSize()
             .background(color = MaterialTheme.colors.background),
     ) {
         Spacer(modifier = Modifier.height(56.dp))
-        TextField(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 16.dp, end = 16.dp),
-            value = searchState.value,
-            onValueChange = { searchState.value = it },
-            label = {
-                Row {
-                    Icon(
-                        modifier = Modifier.align(Alignment.CenterVertically),
-                        imageVector = ImageVector.vectorResource(id = R.drawable.ic_baseline_search_24),
-                        contentDescription = "logo",
-                        tint = MaterialTheme.colors.onBackground
-                    )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text(
-                        modifier = Modifier.align(Alignment.CenterVertically),
-                        text = "Search",
-                        color = MaterialTheme.colors.onBackground,
-                        style = MaterialTheme.typography.body1,
-                    )
-                }
-            },
-            colors = TextFieldDefaults.textFieldColors(
-                backgroundColor = MaterialTheme.colors.surface
-            )
-        )
+        SearchField(searchState)
         Title("favorite collections")
         RowFavorite()
         Title("align your body")
         RowBody()
         Title("align your mind")
         RowMind()
-        Spacer(
-            Modifier
-                .navigationBarsHeight()
-                .fillMaxWidth()
-        )
+        Spacer(Modifier.navigationBarsHeight())
     }
+}
+
+@Composable
+private fun SearchField(searchState: MutableState<String>) {
+    TextField(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 16.dp, end = 16.dp),
+        value = searchState.value,
+        onValueChange = { searchState.value = it },
+        label = {
+            Row {
+                Icon(
+                    modifier = Modifier.align(Alignment.CenterVertically),
+                    imageVector = ImageVector.vectorResource(id = R.drawable.ic_baseline_search_24),
+                    contentDescription = "logo",
+                    tint = MaterialTheme.colors.onBackground
+                )
+                Spacer(modifier = Modifier.width(4.dp))
+                Text(
+                    modifier = Modifier.align(Alignment.CenterVertically),
+                    text = "Search",
+                    color = MaterialTheme.colors.onBackground,
+                    style = MaterialTheme.typography.body1,
+                )
+            }
+        },
+        colors = TextFieldDefaults.textFieldColors(
+            backgroundColor = MaterialTheme.colors.surface
+        )
+    )
 }
 
 @Composable

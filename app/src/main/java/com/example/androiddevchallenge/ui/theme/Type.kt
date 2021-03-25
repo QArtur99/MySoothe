@@ -23,40 +23,49 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.R
 
-// Set of Material typography styles to start with
+val kulimParkFamily = FontFamily(
+    Font(resId = R.font.kulim_park_light, weight = FontWeight.Light),
+    Font(resId = R.font.kulim_park_regular, weight = FontWeight.Normal),
+)
+
+val latoFamily = FontFamily(
+    Font(resId = R.font.lato_regular, weight = FontWeight.Normal),
+    Font(resId = R.font.lato_bold, weight = FontWeight.Bold),
+)
+
 val typography = Typography(
     h1 = TextStyle(
-        fontFamily = FontFamily(Font(resId = R.font.kulim_park_light)),
-        fontWeight = FontWeight.Normal,
+        fontFamily = kulimParkFamily,
+        fontWeight = FontWeight.Light,
         fontSize = 28.sp,
         letterSpacing = 1.15.sp,
     ),
     h2 = TextStyle(
-        fontFamily = FontFamily(Font(resId = R.font.kulim_park_regular)),
+        fontFamily = kulimParkFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 15.sp,
         letterSpacing = 1.15.sp,
     ),
     h3 = TextStyle(
-        fontFamily = FontFamily(Font(resId = R.font.lato_bold)),
-        fontWeight = FontWeight.Normal,
+        fontFamily = latoFamily,
+        fontWeight = FontWeight.Bold,
         fontSize = 14.sp,
         letterSpacing = 0.sp,
     ),
     body1 = TextStyle(
-        fontFamily = FontFamily(Font(resId = R.font.lato_regular)),
+        fontFamily = latoFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
         letterSpacing = 1.15.sp,
     ),
     button = TextStyle(
-        fontFamily = FontFamily(Font(resId = R.font.lato_bold)),
-        fontWeight = FontWeight.Normal,
+        fontFamily = latoFamily,
+        fontWeight = FontWeight.Bold,
         fontSize = 14.sp,
         letterSpacing = 1.15.sp,
     ),
     caption = TextStyle(
-        fontFamily = FontFamily(Font(resId = R.font.kulim_park_regular)),
+        fontFamily = kulimParkFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp,
         letterSpacing = 1.15.sp,
