@@ -2,8 +2,7 @@
 ![Workflow result](https://github.com/QArtur99/MySoothe/workflows/Check/badge.svg)
 
 ## :scroll: Description
-Android Dev Challenge: Week 3 - Speed round
-
+Android Dev Challenge: Week 3 - Speed round  
 EMEA-friendly: 9AM UTC
 
 ## :bulb: Motivation and Context
