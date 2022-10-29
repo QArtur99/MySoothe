@@ -38,7 +38,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.compose.navigate
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.data.ScreenState
 import com.example.androiddevchallenge.ui.theme.shapes
