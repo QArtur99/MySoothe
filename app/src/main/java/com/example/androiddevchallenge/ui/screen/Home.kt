@@ -84,16 +84,19 @@ fun Home(isDarkTheme: Boolean) {
             Fab()
         },
         floatingActionButtonPosition = FabPosition.Center,
-        isFloatingActionButtonDocked = true
+        isFloatingActionButtonDocked = true,
     ) {
-        Content(searchState)
+        Content(searchState, modifier = Modifier.padding(it))
     }
 }
 
 @Composable
-private fun Content(searchState: MutableState<String>) {
+private fun Content(
+    searchState: MutableState<String>,
+    modifier: Modifier
+) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .verticalScroll(rememberScrollState())
             .fillMaxSize()
             .background(color = MaterialTheme.colors.background),
@@ -124,7 +127,7 @@ private fun SearchField(searchState: MutableState<String>) {
                     modifier = Modifier.align(Alignment.CenterVertically),
                     imageVector = ImageVector.vectorResource(id = R.drawable.ic_baseline_search_24),
                     contentDescription = "logo",
-                    tint = MaterialTheme.colors.onBackground
+                    tint = MaterialTheme.colors.onBackground,
                 )
                 Spacer(modifier = Modifier.width(4.dp))
                 Text(
@@ -136,8 +139,8 @@ private fun SearchField(searchState: MutableState<String>) {
             }
         },
         colors = TextFieldDefaults.textFieldColors(
-            backgroundColor = MaterialTheme.colors.surface
-        )
+            backgroundColor = MaterialTheme.colors.surface,
+        ),
     )
 }
 
@@ -150,7 +153,7 @@ private fun Title(title: String) {
         modifier = Modifier
             .paddingFromBaseline(top = 40.dp)
             .padding(horizontal = 16.dp)
-            .padding(bottom = 8.dp)
+            .padding(bottom = 8.dp),
     )
 }
 
@@ -159,7 +162,7 @@ private fun RowFavorite() {
     Row(
         modifier = Modifier
             .horizontalScroll(rememberScrollState())
-            .padding(start = 16.dp, end = 16.dp, top = 0.dp, bottom = 8.dp)
+            .padding(start = 16.dp, end = 16.dp, top = 0.dp, bottom = 8.dp),
     ) {
         for (i in favoriteList.indices step 2) {
             Column {
@@ -175,14 +178,14 @@ private fun RowFavorite() {
 @Composable
 fun RowBody() {
     LazyRow(
-        contentPadding = PaddingValues(start = 16.dp)
+        contentPadding = PaddingValues(start = 16.dp),
     ) {
         for (item in bodyList) {
             item {
                 Course(
                     painter = painterResource(id = item.res),
                     title = item.name,
-                    modifier = Modifier.padding(end = 8.dp, bottom = 8.dp)
+                    modifier = Modifier.padding(end = 8.dp, bottom = 8.dp),
                 )
             }
         }
@@ -192,14 +195,14 @@ fun RowBody() {
 @Composable
 fun RowMind() {
     LazyRow(
-        contentPadding = PaddingValues(start = 16.dp)
+        contentPadding = PaddingValues(start = 16.dp),
     ) {
         for (item in mindList) {
             item {
                 Course(
                     painter = painterResource(id = item.res),
                     title = item.name,
-                    modifier = Modifier.padding(end = 8.dp, bottom = 8.dp)
+                    modifier = Modifier.padding(end = 8.dp, bottom = 8.dp),
                 )
             }
         }
@@ -210,11 +213,11 @@ fun RowMind() {
 fun Course(
     painter: Painter,
     title: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Column(
         modifier = modifier,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Image(
             painter = painter,
@@ -222,12 +225,12 @@ fun Course(
             modifier = Modifier
                 .size(88.dp)
                 .clip(RoundedCornerShape(percent = 50)),
-            contentScale = ContentScale.Crop
+            contentScale = ContentScale.Crop,
         )
         Text(
             text = title,
             modifier = Modifier.paddingFromBaseline(top = 24.dp),
-            style = MaterialTheme.typography.h3
+            style = MaterialTheme.typography.h3,
         )
     }
 }
@@ -237,11 +240,11 @@ private fun Fab() {
     FloatingActionButton(
         onClick = {},
         backgroundColor = MaterialTheme.colors.primary,
-        elevation = FloatingActionButtonDefaults.elevation(0.dp, 0.dp)
+        elevation = FloatingActionButtonDefaults.elevation(0.dp, 0.dp),
     ) {
         Icon(
             painter = painterResource(id = R.drawable.ic_baseline_play_arrow_24),
-            contentDescription = stringResource(id = R.string.cd_action_play)
+            contentDescription = stringResource(id = R.string.cd_action_play),
         )
     }
 }
@@ -252,7 +255,7 @@ private fun BottomActionBar() {
         modifier = Modifier.navigationBarsPadding(),
         backgroundColor = MaterialTheme.colors.background,
         contentColor = MaterialTheme.colors.onBackground,
-        elevation = 6.dp
+        elevation = 6.dp,
     ) {
         BottomNavigationItem(
             selected = true,
@@ -262,7 +265,7 @@ private fun BottomActionBar() {
             },
             label = {
                 Text(stringResource(id = R.string.cd_nav_home).toUpperCase(Locale.ROOT))
-            }
+            },
         )
         BottomNavigationItem(
             selected = false,
@@ -272,7 +275,7 @@ private fun BottomActionBar() {
             },
             label = {
                 Text(stringResource(id = R.string.cd_nav_profile).toUpperCase(Locale.ROOT))
-            }
+            },
         )
     }
 }
@@ -281,12 +284,12 @@ private fun BottomActionBar() {
 fun ItemFavorite(item: Favorite) {
     Card(
         backgroundColor = MaterialTheme.colors.surface,
-        shape = shapes.small
+        shape = shapes.small,
     ) {
         Row(
             modifier = Modifier
                 .height(56.dp)
-                .width(192.dp)
+                .width(192.dp),
         ) {
             Image(
                 modifier = Modifier
@@ -294,7 +297,7 @@ fun ItemFavorite(item: Favorite) {
                     .width(56.dp),
                 painter = painterResource(item.res),
                 contentScale = ContentScale.Crop,
-                contentDescription = item.name
+                contentDescription = item.name,
             )
             Spacer(Modifier.width(18.dp))
             Text(
@@ -312,7 +315,7 @@ fun SmallIcon(resId: Int) {
     Icon(
         painter = painterResource(id = resId),
         contentDescription = stringResource(id = R.string.cd_nav_profile),
-        modifier = Modifier.size(18.dp)
+        modifier = Modifier.size(18.dp),
     )
 }
 

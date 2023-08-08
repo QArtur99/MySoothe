@@ -53,7 +53,7 @@ fun Welcome(isDarkTheme: Boolean, navController: NavController) {
             .fillMaxWidth()
             .fillMaxHeight()
             .background(color = MaterialTheme.colors.background),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Image(
             modifier = Modifier
@@ -72,19 +72,19 @@ fun Welcome(isDarkTheme: Boolean, navController: NavController) {
             Icon(
                 imageVector = ImageVector.vectorResource(id = logo),
                 contentDescription = "logo",
-                tint = MaterialTheme.colors.primary
+                tint = MaterialTheme.colors.primary,
             )
             Spacer(modifier = Modifier.height(32.dp))
             Button(
                 onClick = { /*TODO*/ },
                 shape = shapes.medium,
                 colors = ButtonDefaults.buttonColors(
-                    backgroundColor = MaterialTheme.colors.primary
+                    backgroundColor = MaterialTheme.colors.primary,
                 ),
                 modifier = Modifier
                     .padding(start = 16.dp, end = 16.dp)
                     .fillMaxWidth()
-                    .height(72.dp)
+                    .height(72.dp),
             ) {
                 Text(
                     text = "Sign up".toUpperCase(Locale.ROOT),
@@ -99,12 +99,12 @@ fun Welcome(isDarkTheme: Boolean, navController: NavController) {
                 },
                 shape = shapes.medium,
                 colors = ButtonDefaults.buttonColors(
-                    backgroundColor = MaterialTheme.colors.secondary
+                    backgroundColor = MaterialTheme.colors.secondary,
                 ),
                 modifier = Modifier
                     .padding(start = 16.dp, end = 16.dp)
                     .fillMaxWidth()
-                    .height(72.dp)
+                    .height(72.dp),
             ) {
                 Text(
                     text = "Log in".toUpperCase(Locale.ROOT),

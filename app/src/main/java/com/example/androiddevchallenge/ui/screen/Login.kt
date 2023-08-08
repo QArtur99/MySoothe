@@ -51,7 +51,6 @@ import java.util.Locale
 
 @Composable
 fun Login(isDarkTheme: Boolean, navController: NavController) {
-
     val emailState = remember { mutableStateOf("") }
     val passwordState = remember { mutableStateOf("") }
 
@@ -63,7 +62,7 @@ fun Login(isDarkTheme: Boolean, navController: NavController) {
             .fillMaxWidth()
             .fillMaxHeight()
             .background(color = MaterialTheme.colors.background),
-        contentAlignment = Alignment.TopCenter
+        contentAlignment = Alignment.TopCenter,
     ) {
         Image(
             modifier = Modifier
@@ -81,7 +80,7 @@ fun Login(isDarkTheme: Boolean, navController: NavController) {
         ) {
             Box(
                 modifier = Modifier.height(200.dp),
-                contentAlignment = Alignment.BottomCenter
+                contentAlignment = Alignment.BottomCenter,
             ) {
                 Text(
                     text = "log in".toUpperCase(Locale.ROOT),
@@ -104,8 +103,8 @@ fun Login(isDarkTheme: Boolean, navController: NavController) {
                     )
                 },
                 colors = TextFieldDefaults.textFieldColors(
-                    backgroundColor = MaterialTheme.colors.surface
-                )
+                    backgroundColor = MaterialTheme.colors.surface,
+                ),
             )
             Spacer(modifier = Modifier.height(8.dp))
             TextField(
@@ -123,8 +122,8 @@ fun Login(isDarkTheme: Boolean, navController: NavController) {
                     )
                 },
                 colors = TextFieldDefaults.textFieldColors(
-                    backgroundColor = MaterialTheme.colors.surface
-                )
+                    backgroundColor = MaterialTheme.colors.surface,
+                ),
             )
             Spacer(modifier = Modifier.height(8.dp))
             Button(
@@ -133,12 +132,12 @@ fun Login(isDarkTheme: Boolean, navController: NavController) {
                 },
                 shape = shapes.medium,
                 colors = ButtonDefaults.buttonColors(
-                    backgroundColor = MaterialTheme.colors.secondary
+                    backgroundColor = MaterialTheme.colors.secondary,
                 ),
                 modifier = Modifier
                     .padding(start = 16.dp, end = 16.dp)
                     .fillMaxWidth()
-                    .height(72.dp)
+                    .height(72.dp),
             ) {
                 Text(
                     text = "Log in".toUpperCase(Locale.ROOT),
@@ -148,7 +147,7 @@ fun Login(isDarkTheme: Boolean, navController: NavController) {
             }
             Box(
                 modifier = Modifier.height(32.dp),
-                contentAlignment = Alignment.BottomCenter
+                contentAlignment = Alignment.BottomCenter,
             ) {
                 Row {
                     Text(
